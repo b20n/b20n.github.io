@@ -1,0 +1,9 @@
+# Site settings
+email: b@banjiewen.net
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: banjiewen
+github_username:  banjiewen
+
+# Build settings
+markdown: kramdown
