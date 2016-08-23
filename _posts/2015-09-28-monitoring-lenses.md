@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Lenses for Monitoring"
-date:   2015-09-28 21:12:58
+date: 2015-09-28
 ---
 
 Designing monitoring and alerting systems for cloud services is surprisingly
