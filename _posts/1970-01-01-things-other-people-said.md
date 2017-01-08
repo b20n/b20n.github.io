@@ -19,6 +19,9 @@ Freeman Dyson, _Disturbing the Universe_:
 > It is impossible to make real progress in technology without gambling. And the
 > trouble with gambling is that you do not always win.
 
+> A good scientist is a person with original ideas. A good engineer is a person
+> who makes a design that works with as few original ideas as possible.
+
 Marshall McLuhan, _The Gutenberg Galaxy_:
 
 > It is a consumer-oriented culture that is concerned with authors and labels of
