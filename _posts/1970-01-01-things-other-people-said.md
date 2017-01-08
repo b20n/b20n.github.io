@@ -4,6 +4,21 @@ title:  "Various Things Other People Have Said That I Have Enjoyed"
 date: 1970-01-01
 ---
 
+Seymour Papert, "Computer Criticism vs. Technocentric Thinking":
+
+> Observing what a design team finds worth giving up is a window into its
+> aesthetics and its intellectual values."
+
+Freeman Dyson, _Disturbing the Universe_:
+
+> The essential factor which keeps scientific enterprise healthy is a shared
+> respect for quality.
+
+> Technology has made evil anonymous.
+
+> It is impossible to make real progress in technology without gambling. And the
+> trouble with gambling is that you do not always win.
+
 Marshall McLuhan, _The Gutenberg Galaxy_:
 
 > It is a consumer-oriented culture that is concerned with authors and labels of
