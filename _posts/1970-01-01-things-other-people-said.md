@@ -4,6 +4,15 @@ title:  "Various Things Other People Have Said That I Have Enjoyed"
 date: 1970-01-01
 ---
 
+Franz Kafka, _The Great Wall of China_:
+
+> The farther one descends among the lower schools the more, naturally enough,
+> does one find teachers' and pupils' doubts of their own knowledge vanishing,
+> and superficial culture mounting sky-high around a few precepts that have been
+> drilled into people's minds for centuries, precepts which, though they have
+> lost nothing of their eternal truth, remain eternally invisible in this fog of
+> confusion.
+
 Donald Knuth, "The Errors of TEX":
 
 > At the end of almost every day between March 29, 1978 and March 29, 1980, I
