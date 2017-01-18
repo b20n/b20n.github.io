@@ -4,6 +4,15 @@ title:  "Various Things Other People Have Said That I Have Enjoyed"
 date: 1970-01-01
 ---
 
+Thoreau:
+
+> The mass of men lead lives of quiet desperation.
+
+Samuel Johnson:
+
+> Curiosity is one of the permanent and certain characteristics of a vigorous
+> mind.
+
 Franz Kafka, _The Great Wall of China_:
 
 > The farther one descends among the lower schools the more, naturally enough,
