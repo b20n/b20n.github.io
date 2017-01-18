@@ -4,6 +4,14 @@ title:  "Various Things Other People Have Said That I Have Enjoyed"
 date: 1970-01-01
 ---
 
+Donald Knuth, "The Errors of TEX":
+
+> At the end of almost every day between March 29, 1978 and March 29, 1980, I
+> felt that TEX78 was a complete system, containing no bugs and needing no
+> further enhancements. At the end of almost every day since September 9, 1982,
+> I have felt that TEX82 was a complete system, containing no bugs and needing
+> no further enhancements.
+
 Seymour Papert, "Computer Criticism vs. Technocentric Thinking":
 
 > Observing what a design team finds worth giving up is a window into its
