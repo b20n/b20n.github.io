@@ -27,4 +27,4 @@ Accepting this implies two things:
    them. They might have a viewpoint that you could incorporate in to your own
    work.
 
-[1]: http://banjiewen.net/good-abstractions.html
+[1]: http://b20n.net/good-abstractions.html
