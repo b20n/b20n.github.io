@@ -1,15 +1,13 @@
 ---
 layout: post
-title:  "A Brief History of Managing Computer Systems, Part I"
+title:  "A Brief, Incomplete, Early History of Managing Computer Systems"
 date: 2020-07-22
 ---
 
-_This is a small piece of a bigger project I'm working on - stay tuned for more..._
-
 N.B.: what follows is a rational reconstruction; it is not intended to
 be a comprehensive history by any means. There are loads of great
-books out there on the history of computing and computers; this isn't
-one of them.
+resources out there on the history of computing and computers; this
+isn't one of them.
 
 ### Beginnings: early electromechanical machines
 The earliest days of modern computing are almost unrecognizable - no
