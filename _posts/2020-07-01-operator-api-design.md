@@ -139,7 +139,7 @@ convergence progress; those that do generally do is in an ad-hoc
 manner. It is unfortunately up to the user to understand the semantics
 of each resource-controller pair.
 
-As the designe4 of CRD-based operators this is a problem for you, too.
+As the designer of CRD-based operators this is a problem for you, too.
 And of course, there's no "right" answer - if there were, it'd be
 standardized. One thing that you can do, however, is to use resource
 generations. It's quite simple, and you should probably be using them
