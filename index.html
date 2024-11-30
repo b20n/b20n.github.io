@@ -1,15 +1,136 @@
----
-layout: default
----
-<div class="home">
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <h3>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-</div>
+<html>
+  <head>
+    <style>
+      html {
+          background: #1c1c1c;
+          font-family: sans-serif;
+          font-size: 18px;
+          font-weight: 200;
+          margin-top: -18px;
+          overflow: hidden;
+          text-align: justify;
+          opacity: 0.75;
+      }
+      span {
+          padding: 0px 5px 0px 0px;
+      }
+    </style>
+    <script>
+      var shuffle = function(array){
+          for (let i = array.length - 1; i >= 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [array[i], array[j]] = [array[j], array[i]];
+          }
+      };
+      var render = function() {
+          var quotes = [
+              // Adler, Ansbacher
+              "Do not forget the most important fact that not heredity and not environment are determining factory.  Both are giving only the frame and the influences which are answered by the individual in regard to his stylized creative power.",
+              "Such traits as timidity, shyness, insecurity, as well as phantasies and wishes, correspond to the inferiority feeling [...] which culminates in a never-ceasing, always exaggerated feeling of being slighted.",
+              "The human mind shows an urge to capture into fixed forms through unreal assumptions that which is chaotic, always in flux, and incomprehensible. It is always entering an unreal, abstract schema into real life.",
+              "In the soul of the child, a guiding line forms which urges (?) toward the enhancement of self-esteem in order to escape insecurity.",
+              "Safeguarding tendencies are the essential characteristic trait of the neurotic. They are evoked by the over-sensitivity of the neurotic and his fear of disparagement and disgrace.",
+              "The self-based individual always forgets that his self would be safeguarded better the more he prepares himself for the welfare of mankind.",
+              "Such an individual [with a heightened inferiority feeling] will be oversensitive, unable to bear a real or assumed slight. He will remain in continuous combat readiness and want to force other persons under his dominance.",
+              "The only salvation from the continuously driving inferiority feeling is the knowledge and the feeling of being valuable which originates from the contribution to the common welfare.",
+              "All failures are failures because they are lacking in social interest. They approach the problems of life without the confidence that they can be solved by cooperation. The meaning they give to life is a private meaning. Their goal of success is a goal of personal superiority, and their triumphs have meaning only for themselves.",
+              "It is not the child's experiences which dictate his actions, it is the conclusions which he draws from his experiences.",
+              "The individual sees all his problems from a perspective which is his own creation. Thus he also sees the environment which trains him with his own self-created perspective and accordingly changes its effect on him for better or worse.",
+              "Adlers theory of neurosis and other behavior disorders is in essence the following. (1) An individual with a mistaken opinion of himself and the world, that is, with mistaken goals and a mistaken style of life, (2) will resort to various forms of a normal behaviors aimed at safeguarding his opinion of himself (3) when confronted with situations which he feels he cannot meet successfully, due to his mistaken views and the resulting inadequate preparation. (4) The mistake consists in being self-centered rather than taking the human interrelatedness into account. (5) The individual is not consciously aware of these processes.",
+              "Neurosis is the rational development of an individual who is comparatively inactive and filled with a personal, egocentric striving for superiority, and is therefore retarded in development of social interest.",
+              "It is the feeling of insecurity which forces the neurotic to a stronger attachment to fictions, guiding lines, ideals, and principles.",
+              "The neurotically disposed individual has a sharply schematizing, strongly abstracting mode of apperception. Thus he groups inner as well as outer events according to a strictly antithetical schema, and admits no  degree in between. This mistake in neurotic thinking, which is identical with exaggerated abstraction, is also caused by the neurotic safeguarding tendency. This tendency needs sharply defined guiding lines, ideals, and bogeys in which the neurotic believes, in order to choose, foresee, and take action. In this way he becomes estranged from concrete reality.",
+              "There are some who are seeking mainly for their own interests and for personal superiority. They give a private meaning to life. [...] We find that such people are unable to connect themselves with their fellow men.",
+              "The superiority complex appears in the bearing, the character traits, and the opinion of one's own superhuman gifts and capacities. It can also become visible in the exaggerated demands one makes on oneself and on other persons. Disdain; vanity in connection with personal appearance, whether in the way of elegance or neglect; an unfashionable mode of attire; snobbishness; a tyrannical nature; nagging; a tendency to depreciate [...]",
+              "The patient unknowingly selects certain symptoms and develops them until they impress him, consciously, as real obstacles. Behind this barricade of symptoms he feels hidden and secure. Never neglect the patient's own use of his symptoms.",
+              "The suffering of the patient is real, usually exaggerated as a protection against the loss of prestige.",
+              "[Neurotics] act as if without their aid the others would be incapable of caring for themselves. They always give advice, want to do everything themselves, find new dangers, and never rest until the other person, confused and discouraged, confides himself to their care.",
+              "The life-problem of the neurotic is not, 'What must I do to fit into the demands of society and thereby achieve a harmonious existence?' but rather, 'How must I fashion my life to satisfy my superiority tendency, to transform my inferiority feeling into a feeling of godlikeness?'",
+              "The feeling of weakness so dominates the neurotic that, without knowing it, he harnesses all his strength to build a 'protective superstructure'. He learns to pay attention to relationships which would escape others. His sensitivity becomes 'sharpened'",
+              "Fear of defeat is the only reason for the will to escape. At the same time it is the hardest of all reasons to admit. We frequently find some fictional form of anxiety, which the patient interprets variously but never truly - never as the simple fear of defeat. All forms of phobia may originate at this point to fulfill the purpose of blocking further activity. The ordeal is evaded without disclosing, even to the owner, the hated feeling of inferiority all neurotic symptoms and functional disturbances - such as migraine - develop out of the severe tension of this very difficult concealment.",
+              "The perception-schema of the neurotic evaluates all impressions as if they were fundamental matters and dichotomizes them in a purposeful manner into above-below, nothing-everything, etc. This apperception schema must always be traced and unmasked as immature and untenable... So long as he does not understand this error, so long as he regards his virtual world as the right one, so long as he finds the real objective world unbearable for his vanity, he will remain a neurotic.",
+              // Epictetus
+              "There is one path alone that leads to happiness - and keep this thought at hand morning, noon, and night - it is to renounce any claim to anything that lies outside the sphere of choice, to regard nothing as being your own,to surrender everything to the diety, to fortune [...] and to devote yourself to one thing only - that which isyour own.",
+              "For you'll discover by experience that it is in fact true, and that the things that are highly regarded and eagerly pursued are of no value to those who acquire them, while those who have not yet acquired them fancy that, once they do, they'll be in posession of all that is good; but when they have them, there is the same scorching heat as before, the same fierce agitation, the same sense of surfeit, the same desire for what one doesn't have. For freedom is not attained through the satisfaction of desires, but through the supression of them.",
+              "Why should one person envy another? Why should one let oneself be dazzled by those who have great possessiosn and hold powerful positions, especially if they're both strong and bad-tempered? For what can they do to us? The things that they have the power to do are of no concern to us, and when it comes to things that matter to us - they have no power over those.",
+              "It is with regard to external things that all people fall into difficulty, fall in to bewilderment. 'What shallI do? How will it be? How will it turn out? I only hope this, or that, doesn't happen to me'. All of these are expressions of people who are preoccupied with things that lie outside the sphere of choice.",
+              "If someone handed over your body to somebody whom you encountered, you'd be furious; but that you hand over your mind to anyone who comes along, so that, if he abuses you, it becomes disturbed and confused, do you feel no shame at that?",
+              "Remember that what insults you isn't the person who abuses you or hits you, but your judgement that such peopleare insulting you. So whenever anyone irritates you, recognize that it is your opinion that has irritated you. Try above all, then not to allow yourself to be carried away by the impression; for if you delay things and gaintime to think, you'll find it easier to gain control of yourself.",
+              "Pay careful attention to your impressions; watch over them unceasingly. For it is not something of little importance you're trying to preserve, but self-respect, fidelity, impassibility, freedom from distress, fear, and anxiety, and, in a word, freedom.",
+              "Whatever rules of conduct are set for you, hold to them as if they were laws, as if it would be an act of impiety for you to transgress them; as to what anyone says about you, pay no heed to it, since in the end that is notyour concern.",
+              "These vicious judgements must be rooted out, then; that is what we should concentrate our efforts on. For what is weeping and groaning? A judgement. What is misfortune? A judgement. What is civil strife, dissension, fault-finding, accusation, impiety, foolishness? All of these are judgements and nothing more, and judgements that are passed, moreover, about things that lie outside the sphere of choice, under the supposition that such things aregood or bad. Let someone transfer these judgements to things that lie within the sphere of choice, and I guarantee that he'll preserve his peace of mind, regardles of what his circumstances may be.",
+              "Who are they, these people whose admiration you want to win? Aren't they the very people whom you're in the habit of describing as mad? What, do you want to be admired by madmen?",
+              "Why is it, for instance, that an orator who knows that he has written a good speech, and has fixed it in his memory, and is bringing an attractive voice to the task, still feels anxious nonetheless? Because he is not content merely to practice his art. What else does he want, then? To receive praise from his audience. Now the matter in which he as trained himself is to be able to practice his art, and he has never trained himself to deal with praise and censure. For when has he heard anything from anyone about what praise is, and what censure is, and what is the nature of each? And what kinds of praise are worth seeking, and what kinds of disapproval are to be avoided? When has he ever undergone any course of training with regard to these principles?",
+              "If you're constantly seeking external things, you're sure to be tested this way and that in accordance with your master's will. And who is your master? Whoever has the authority over anything that you're anxious to gain or avoid.",
+              "It isn't the things themselves that disturb people, but the judgements that they form about them.",
+              "Practise, then, from the very beginning to say to every disagreeable impression, \"You're an impression and not at all what you appear to be.\" Then examine it and test it by these rules you posess, and first and foremost by this one, whether the impression relates to those things that are within our power, or those that aren't within our power; and if it relates to anything that isn't within our power, be ready to reply, \"That's nothing to me.\"",
+              // Marcus Aurelius
+              "Make sure that among the truths into which you'll be dipping you have the following two perfectly available forreference: first, that the things of the world cannot affect the soul; they lie inert outside it, and only internal beliefs can disturb it. Second, that everything you see will shortly change and before long will cease to exist; and bear constantly in mind how many changes you personally have gone through in the past. \"The universe is change, and life a supposition.\"",
+              "If something external is causing you distress, it's not the thing itself that's trouble you but your judgement about it, and it's within your power to erase that right now. And if it's something internal to yourself, is anyone stopping you from looking at it in a more positive way?",
+              "The vain pomp of a procession, plays on a stage, flocks, herds, skirmishes, a meager bone tossed to puppies, a scrap of bread tossed in a fish tank, the toiling of ants with their burdens, the scurrying of nervous mice, puppets tugged by their strings. In the midst of all this, you should take a stand good-naturedly and without beingbigheaded, but paying attention to the fact that the worth of every individual depends on the worth of what he values.",
+              "Remind yourself at frequent intervals how quickly things and events are carried past and swept away. Reality islike an endlessly flowing river, its activities constantly changing, its causes variable beyond counting. It's hardly an exaggeration to say that nothing in stable, even what is close to us in time.Past time is infinite andthe future a yawning gulf in which everything is swallowed up. In these circumstances, isn't it just sheer stupidity for a man to get angry, agitated, or aggrieved, as though anything lasted any amount of time and could irritate him for long?",
+              // Cicero
+              "But now that the cause of disorders is discovered, all of which originate in judgements based upon beliefs and upon consent of the will, let us at least put an end to this discussion. [...] There is one method of healing both distress and all other diseases of the soul, namely to show that all are matters of belief and consent of thewill and are submitted to simply because such submission is thought to be right. This deception, as being the root of all evil, philosophy promises to eradicate utterly. Let us surrender ourselves therefore to its treatmentand suffer ourselves to be cured; for when these evils settle upon us, not merely is it impossible to be happy but we canot be in a sound state either.",
+              "For my part I think that the whole train of reasoning which is concerned with disorder of the soul turns upon the one fact that all disorders are within our control, are all acts of judgement, are all voluntary. To think otherwise therefore is a deception to be removed, and a belief to be rejected, and just as where evil is expected the prospect must be met with endurance, so where good is expected the objects held to be momentous and delightful must be regarded in a calmer spirit.",
+              "Grief, then, is a recent opinion of some present evil, about which it seems right to feel downcast and in low spirits. Joy is a recent opinion of a present good, in response to which it seems right to be elated. Fear is an opinion of an impending evil that seems unbearable. Lust in an opinion about a good to come - that it would be better if it were already here.",
+          ];
+          var colors = [
+              "#cccccc",
+              "#666666",
+              "#faf7eb",
+              "#999999",
+          ];
+          var weights = [
+              200,
+              400,
+              600,
+              800,
+          ];
+          // Shuffle the quotes array
+          shuffle(quotes);
+          shuffle(colors);
+          shuffle(weights);
+          for (i=0; i<quotes.length; i++) {
+              if (i % 3 === 0) {
+                  // Re-shuffle here to add more visual randomness
+                  shuffle(colors);
+                  shuffle(weights);
+              }
+              var span = document.createElement('span');
+              span.innerText = quotes[i];
+              span.style.color = colors[i % colors.length];
+              span.style.fontWeight = weights[i % weights.length];
+              document.body.appendChild(span);
+          }
+      };
+      var main = function() {
+          var opacity = 0;
+          var increment = 0.005
+          document.body.style.opacity = opacity;
+          document.body.innerHTML = '';
+          render();
+          var in_timer = setInterval(function() {
+              if (opacity >= 0.75) {
+                  clearInterval(in_timer);
+                  setTimeout(function() {
+                      var out_timer = setInterval(function() {
+                          if (opacity <= 0) {
+                              clearInterval(out_timer);
+                              // Loop
+                              main();
+                          }
+                          opacity -= increment;
+                          document.body.style.opacity = opacity;
+                      }, 5);
+                  }, 60000); // Wait 60 seconds before refreshing
+              }
+              opacity += increment;
+              document.body.style.opacity = opacity;
+          }, 5);
+      }
+      window.onload = main;
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
