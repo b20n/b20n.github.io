@@ -12,8 +12,9 @@
           text-align: justify;
           opacity: 0.75;
       }
-      span {
-          padding: 0px 5px 0px 0px;
+      div#center {
+          margin: 0 auto;
+          width: 200px;
       }
       @media screen and (max-width:769px) {
           body {
@@ -27,12 +28,12 @@
           shuffle(quotes);
           shuffle(colors);
           shuffle(weights);
-          var span = document.createElement('span');
-          span.innerText = quotes[0];
-          span.style.color = colors[0];
-          span.style.fontWeight = weights[0];
-          document.body.appendChild(span);
-          }
+          var div = document.createElement('div');
+          div.setAttribute('id', 'center');
+          div.innerText = quotes[0];
+          div.style.color = colors[0];
+          div.style.fontWeight = weights[0];
+          document.body.appendChild(div);
       };
       var main = function() {
           var opacity = 0;
