@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <style>
+      html {
+          background: #1c1c1c;
+          font-family: sans-serif;
+          font-size: 20px;
+          font-weight: 200;
+          margin-top: -18px;
+          overflow: hidden;
+          text-align: justify;
+          opacity: 0.75;
+      }
+      span {
+          padding: 0px 5px 0px 0px;
+      }
+      @media screen and (max-width:769px) {
+          body {
+              font-size: 24px;
+          }
+      }
+    </style>
+    <script src="quotes.js"></script>
+    <script>
+      var render = function() {
+          shuffle(quotes);
+          shuffle(colors);
+          shuffle(weights);
+          var span = document.createElement('span');
+          span.innerText = quotes[0];
+          span.style.color = colors[0];
+          span.style.fontWeight = weights[0];
+          document.body.appendChild(span);
+          }
+      };
+      var main = function() {
+          var opacity = 0;
+          var increment = 0.005
+          document.body.style.opacity = opacity;
+          document.body.innerHTML = '';
+          render();
+          var in_timer = setInterval(function() {
+              if (opacity >= 0.75) {
+                  clearInterval(in_timer);
+                  setTimeout(function() {
+                      var out_timer = setInterval(function() {
+                          if (opacity <= 0) {
+                              clearInterval(out_timer);
+                              // Loop
+                              main();
+                          }
+                          opacity -= increment;
+                          document.body.style.opacity = opacity;
+                      }, 5);
+                  }, 60000); // Wait 60 seconds before refreshing
+              }
+              opacity += increment;
+              document.body.style.opacity = opacity;
+          }, 5);
+      }
+      window.onload = main;
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
