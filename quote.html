@@ -12,10 +12,6 @@
           text-align: justify;
           opacity: 0.75;
       }
-      div#center {
-          margin: 0 auto;
-          width: 200px;
-      }
       @media screen and (max-width:769px) {
           body {
               font-size: 24px;
@@ -26,12 +22,15 @@
     <script>
       var render = function() {
           shuffle(quotes);
-          shuffle(colors);
           shuffle(weights);
           var div = document.createElement('div');
-          div.setAttribute('id', 'center');
+          div.style.position = 'absolute';
+          div.style.top = '50%';
+          div.style.left = '50%';
+          div.style.transform = 'translate(-50%, -50%)';
           div.innerText = quotes[0];
-          div.style.color = colors[0];
+          // Always use the second-lightest color here
+          div.style.color = colors[colors.length - 2];
           div.style.fontWeight = weights[0];
           document.body.appendChild(div);
       };
