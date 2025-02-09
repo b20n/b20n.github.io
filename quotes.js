@@ -137,7 +137,7 @@ var quotes = [
     // Dreikurs, Psychodynamics, Psychotherapy, Connsulting
     "A person with a very highly developed ambition, the perfectionist, will get discouraged [easily]. The person with social interest, who is less interested in his own prestige than in the welfare of others, will withstand greater hardships without withdrawing.",
     "Psychic tension is fundamentally the fear of obligations, failure, and inadequacy - and places the whole body under tension.",
-    "The hot-tempered person does not believe that his powers can keep up with his ambitions. Accordingly, his quick temper is often a weapon for making himself the "last word" of his environment and keeping his partner, children and colleagues in permanent shock.",
+    "The hot-tempered person does not believe that his powers can keep up with his ambitions. Accordingly, his quick temper is often a weapon for making himself the \"last word\" of his environment and keeping his partner, children and colleagues in permanent shock.",
     "The desire for self-elevation is not a prerequisite for growth. The desire to be useful - without regard for personal compensation - is much more reliable and less costly. The drive behind this desire is enthusiasm, love, and the enjoyment of living - in contrast to lust for glory, power and self-aggrandizement.",
     "Every child tries to belong; but if he becomes discouraged, as all our children do, he develops wrong ideas about his possibilities to find his place.",
     // Adler, Social Interest
